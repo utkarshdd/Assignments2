@@ -43,7 +43,7 @@ public class checkbst {
 		root.left.left=new Node(60);
 		root.left.left.left=new Node(6);
 		root.left.left.right=new Node(70);
-		root.left.left.left.right=new Node(6);
+		root.left.left.left.right=new Node(8);
 		
 		if(checkbstree(root)) {
 			System.out.println("bst");
@@ -58,10 +58,28 @@ public class checkbst {
 		// TODO Auto-generated method stub
 		if(root==null)
 			return true;
-		if(root.left!=null && root.key<root.left.key)
+		if(root.left!=null && root.key<=maxvalue(root.left))
 			return false;
-		else if(root.right!=null && root.key>root.right.key)
+		else if(root.right!=null && root.key>=minvalue(root.right))
 			return false;
 		return checkbstree(root.left) && checkbstree(root.right);	}
+	//min value
+	public static int minvalue(Node root) {     
+		Node current = root; 
+        /* loop down to find the leftmost leaf */
+        while (current.left != null) { 
+            current = current.left; 
+        } 
+        return (current.key); 
+    }
+	//max value
+	public static int maxvalue(Node root) {    
+		Node current = root; 
+        /* loop down to find the leftmost leaf */
+        while (current.right != null) { 
+            current = current.right; 
+        } 
+        return (current.key); 
+    }
 
 }
