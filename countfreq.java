@@ -18,6 +18,11 @@ public class countfreq {
             {
             	System.out.println(arr[i]+" occurs "+ count+" times");
             }
+			System.out.println("Array:-");
+			for(int w=0;w<arr.length;w++)
+			{
+				System.out.println(arr[w]);
+			}
         }
 	}
 	
