@@ -12,7 +12,7 @@ public class subarraymax {
 		 int [] a = {-2, -3, 4, -1, -2, 1, 5, -3}; 
 		 System.out.println("Maximum contiguous sum is " + 
                                        maxSubArraySum(a)); 
-		System.out.println("Enter Array elements");
+		System.out.println("EnterInput in array");
 		for(int i=0;i<n;i++)
 		{
 			arr[i]=sc.nextInt();
