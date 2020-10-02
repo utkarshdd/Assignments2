@@ -8,6 +8,10 @@ public class subarraymax {
 		System.out.println("Enter size of array");
 		int n=sc.nextInt();
 		int arr[]=new int[n];
+		System.out.println(n);
+		 int [] a = {-2, -3, 4, -1, -2, 1, 5, -3}; 
+		 System.out.println("Maximum contiguous sum is " + 
+                                       maxSubArraySum(a)); 
 		System.out.println("Enter Array elements");
 		for(int i=0;i<n;i++)
 		{
@@ -32,5 +36,20 @@ public class subarraymax {
 		System.out.println("Max ele in subarrays greater than "+k);
 		System.out.println(count);
 	}
+	static int maxSubArraySum(int a[]) 
+    { 
+        int size = a.length; 
+        int max_so_far = Integer.MIN_VALUE, max_ending_here = 0; 
+  
+        for (int i = 0; i < size; i++) 
+        { 
+            max_ending_here = max_ending_here + a[i]; 
+            if (max_so_far < max_ending_here) 
+                max_so_far = max_ending_here; 
+            if (max_ending_here < 0) 
+                max_ending_here = 0; 
+        } 
+        return max_so_far; 
+    } 
 
 }
